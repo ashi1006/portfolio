@@ -1,13 +1,13 @@
-/* ========== Section 3: Experience ========== */
+/* ========== Section 3: Experience (color-aligned with site) ========== */
 .sec3{
   width: 100%;
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 60px 20px 40px; /* top/right-left/bottom */
+  padding: 100px 20px 50px;  /* matches your section spacing */
   gap: 60px;
-  margin-bottom: 40px;
-  height: auto; /* remove fixed 80vh */
+  margin-bottom: 50px;
+  height: auto; /* remove 80vh */
 }
 
 .sec-3-1{
@@ -19,38 +19,41 @@
 .sec-3-2 {
   display: flex;
   justify-content: center;
-  gap: 30px;
-  flex-wrap: wrap;   /* allow wrapping cleanly */
+  align-items: stretch;
+  gap: 50px;
+  flex-wrap: wrap;      /* allow wrapping like sec4 */
   width: 100%;
   max-width: 1000px;
 }
 
-.box2 {
-  background: rgba(255,255,255,0.7);
-  backdrop-filter: blur(10px);
-  border: none;
-  border-radius: 16px;
-  padding: 24px;
-  box-shadow: 0 6px 20px rgba(0,0,0,0.1);
+.box2{
+  background: #ffffff;            /* solid white to avoid greyish look */
+  border: 2px solid black;        /* same as sec4 .box3 */
+  border-radius: 15px;            /* same radius as sec4 */
   width: 100%;
-  max-width: 520px;
+  max-width: 450px;               /* mirrors your box3 width */
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 14px;
+  padding: 20px;
+  gap: 15px;
+  box-sizing: border-box;
 }
 
-
-.box2 > :nth-child(1){
+.box2-title{
   font-size: 22px;
   font-weight: 700;
   text-align: center;
+  /* optional subtle accent underline matching darkorange theme */
+  border-bottom: 3px solid darkorange;
+  padding-bottom: 6px;
+  width: 100%;
 }
 
 .skills{
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-  gap: 20px;
+  grid-template-columns: repeat(2, minmax(0, 1fr)); /* two columns like before */
+  gap: 40px;
   width: 100%;
 }
 
@@ -70,20 +73,20 @@
 }
 
 .skills-1-2 > :nth-child(1){
-  font-size: 16px;
+  font-size: 18px;
   font-weight: 600;
 }
 
 /* --------- Tablet --------- */
 @media (max-width:1024px){
-  .sec-3-2 {
-    flex-direction: row;
-    align-items: stretch;
-    gap: 30px;
-    padding: 0 16px;
-  }
-  .sec3{ padding-bottom: 80px; }
-  .box2{ max-width: 600px; }
+  .sec-3-2 { flex-direction: column; align-items: center; }
+  .sec3{ padding-bottom: 150px; }
+  .box2{ max-width: 500px; }
+  .skills{ gap: 50px; }
+  .box2-title{ font-size: 24px; }
+  .skills-1 img { width: 35px; }
+  .skills-1 { gap: 15px; }
+  .skills-1-2 > :nth-child(1){ font-size: 23px; }
 }
 
 /* --------- Mobile --------- */
@@ -91,20 +94,29 @@
   .sec-3-2 {
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+    justify-content: center;
+    gap: 30px;
     padding: 0 16px;
     width: 100%;
     box-sizing: border-box;
   }
+
   .box2 {
     width: 100%;
-    max-width: 360px;
-    padding: 18px;
+    max-width: 300px;
+    padding: 20px;
     margin: 0 auto;
   }
-  .skills { gap: 16px; }
-  .box2 > :nth-child(1) { font-size: 20px; }
-  .skills-1 img { width: 26px; }
+
+  .skills {
+    gap: 25px;
+    justify-content: center;
+    grid-template-columns: 1fr; /* stack items on very small screens */
+  }
+
+  .box2-title { font-size: 20px; }
+
+  .skills-1 img { width: 30px; }
   .skills-1 { gap: 10px; }
-  .skills-1-2 > :nth-child(1) { font-size: 15px; }
+  .skills-1-2 > :nth-child(1) { font-size: 18px; }
 }
