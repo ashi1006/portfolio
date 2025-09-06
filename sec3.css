@@ -1,146 +1,107 @@
+/* ========== Section 3: Experience ========== */
 .sec3{
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 40px 20px;
-    height: 80vh;
-    padding-top: 100px;
-    gap: 100px;
-    margin-bottom: 50px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 60px 20px 40px; /* top/right-left/bottom */
+  gap: 60px;
+  margin-bottom: 40px;
+  height: auto; /* remove fixed 80vh */
 }
 
 .sec-3-1{
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-}
-.sec-3-2 {
-    display: flex;
-    justify-content: center; /* centers the boxes horizontally */
-    gap: 50px;
-    flex-wrap: nowrap;         /* allows wrapping on smaller screens */
-    width: 100%;
-    max-width: 1000px;
-}
-.box2{
-    border: 2px solid black;
-    width: 450px;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    padding: 20px;
-    border-radius: 15px;
-    gap: 15px;
-}
-.skills{
-    display: grid;
-    grid-template-columns: auto auto;
-    gap: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
-.box2>:nth-child(1){
-    font-size: 24px;
-    font-weight: 600;
+.sec-3-2 {
+  display: flex;
+  justify-content: center;
+  gap: 30px;
+  flex-wrap: wrap;   /* allow wrapping cleanly */
+  width: 100%;
+  max-width: 1000px;
+}
+
+.box2{
+  border: 1px solid #e5e7eb;
+  width: 100%;
+  max-width: 520px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  border-radius: 14px;
+  gap: 14px;
+  background: #fff;
+}
+
+.box2 > :nth-child(1){
+  font-size: 22px;
+  font-weight: 700;
+  text-align: center;
+}
+
+.skills{
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 20px;
+  width: 100%;
+}
+
+.skills-1{
+  display: flex;
+  align-items: start;
+  gap: 10px;
 }
 
 .skills-1 img {
-    width: 30px;
-}
-.skills-1{
-    display: flex;
-    align-items: start;
-    gap: 10px;
+  width: 30px;
 }
 
 .skills-1-2 {
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
-.skills-1-2>:nth-child(1){
-    font-size: 18px;
-    font-weight: 600;
+.skills-1-2 > :nth-child(1){
+  font-size: 16px;
+  font-weight: 600;
 }
 
-@media(max-width:1024px){
-    .sec-3-2 {
-    flex-direction: column;
-    align-items: center;
-}
-.sec3{
-    padding-bottom: 150px;
-    height: 100%;
-}
-.box2{
-    
-    width: 500px;
-    gap: 15px;
-}
-.skills{
-   
-    gap: 50px;
-}
-
-.box2>:nth-child(1){
-    font-size: 28px;
-}
-
-.skills-1 img {
-    width: 35px;
-}
-.skills-1{
-    
-    gap: 15px;
-}
-.skills-1-2>:nth-child(1){
-    font-size: 23px;
-    
-}
-
-}
-
-@media(max-width:767px){
-   .sec-3-2 {
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+/* --------- Tablet --------- */
+@media (max-width:1024px){
+  .sec-3-2 {
+    flex-direction: row;
+    align-items: stretch;
     gap: 30px;
+    padding: 0 16px;
+  }
+  .sec3{ padding-bottom: 80px; }
+  .box2{ max-width: 600px; }
+}
+
+/* --------- Mobile --------- */
+@media (max-width:767px){
+  .sec-3-2 {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
     padding: 0 16px;
     width: 100%;
     box-sizing: border-box;
   }
-
   .box2 {
     width: 100%;
-    max-width: 300px;
-    box-sizing: border-box;
-    padding: 20px;
+    max-width: 360px;
+    padding: 18px;
     margin: 0 auto;
-    
   }
-
-  .skills {
-    gap: 25px;
-    justify-content: center;
-  }
-
-  .box2 > :nth-child(1) {
-    font-size: 18px;
-  }
-
-  .skills-1 img {
-    width: 30px;
-  }
-
-  .skills-1 {
-    gap: 10px;
-  }
-
-  .skills-1-2 > :nth-child(1) {
-    font-size: 18px;
-  }
-
+  .skills { gap: 16px; }
+  .box2 > :nth-child(1) { font-size: 20px; }
+  .skills-1 img { width: 26px; }
+  .skills-1 { gap: 10px; }
+  .skills-1-2 > :nth-child(1) { font-size: 15px; }
 }
-
-
